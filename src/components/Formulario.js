@@ -4,7 +4,7 @@ import { RecetasContext } from '../context/RecetasContext';
 
 const Formulario = () => {
     const { categorias } = useContext(CategoriasContext);
-    const { setBusquedaReceta } = useContext(RecetasContext);
+    const { setBusquedaReceta, setConsultar } = useContext(RecetasContext);
     const [busqueda, setBusqueda] = useState({
         nombre: '',
         categoria: '',
@@ -23,6 +23,7 @@ const Formulario = () => {
             onSubmit={e => {
                 e.preventDefault();
                 setBusquedaReceta(busqueda);
+                setConsultar(true);
             }}>
             <fieldset className='text-center'>
                 <legend>Busca Bebidas por Categoría o Ingrediente</legend>
